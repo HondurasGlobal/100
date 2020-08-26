@@ -33,7 +33,7 @@ class HomeIndex extends React.Component {
             <article style={{ backgroundImage: `url(${pic01})` }}>
               <header className="major">
                 <h3>Esto Es Lo Que Sabemos</h3>
-                <p>Canal de ciencia y medicina Youtube</p>
+                <p>Canal de ciencia y medicina en Youtube</p>
               </header>
               <Link to="/loquesabemos" className="link primary"></Link>
             </article>
@@ -80,8 +80,8 @@ class HomeIndex extends React.Component {
               </header>
               <p>
                 La fundación Honduras Global, fundada en 2011, tiene como
-                objetivo identificar y conectar a hondureños y altamente
-                cualificados en todo el mundo con el fin de promover la
+                objetivo identificar y conectar a Hondureños altamente
+                calificados en todo el mundo con el fin de promover la
                 transferencia de conocimiento y promover la innovación y el
                 desarrollo científico, tecnológico y empresarial en Honduras.
               </p>
