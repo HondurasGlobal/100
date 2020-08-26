@@ -12,82 +12,92 @@ import pic05 from '../assets/images/pic05.jpg'
 import pic06 from '../assets/images/pic06.jpg'
 
 class HomeIndex extends React.Component {
-    render() {
+  render() {
+    return (
+      <Layout>
+        <Helmet
+          title="Honduras Global"
+          meta={[
+            {
+              name: 'description',
+              content: 'Honduras Global Red de Conocimiento para el Desarrollo',
+            },
+            { name: 'keywords', content: 'Honduras, Global' },
+          ]}
+        ></Helmet>
 
-        return (
-            <Layout>
-                <Helmet
-                    title="Gatsby Starter - Forty"
-                    meta={[
-                        { name: 'description', content: 'Sample' },
-                        { name: 'keywords', content: 'sample, something' },
-                    ]}
-                >
-                </Helmet>
+        <Banner />
 
-                <Banner />
-
-                <div id="main">
-                    <section id="one" className="tiles">
-                        <article style={{backgroundImage: `url(${pic01})`}}>
-                            <header className="major">
-                                <h3>Aliquam</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic02})`}}>
-                            <header className="major">
-                                <h3>Tempus</h3>
-                                <p>feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic03})`}}>
-                            <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic04})`}}>
-                            <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                    </section>
-                    <section id="two">
-                        <div className="inner">
-                            <header className="major">
-                                <h2>Massa libero</h2>
-                            </header>
-                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-                            <ul className="actions">
-                                <li><Link to="/landing" className="button next">Get Started</Link></li>
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-
-            </Layout>
-        )
-    }
+        <div id="main">
+          <section id="one" className="tiles">
+            <article style={{ backgroundImage: `url(${pic01})` }}>
+              <header className="major">
+                <h3>Esto Es Lo Que Sabemos</h3>
+                <p>Canal de ciencia y medicina Youtube</p>
+              </header>
+              <Link to="/loquesabemos" className="link primary"></Link>
+            </article>
+            <article style={{ backgroundImage: `url(${pic02})` }}>
+              <header className="major">
+                <h3>Newstack</h3>
+                <p>Grupo de apoyo para programadores Fullstack Serverless</p>
+              </header>
+              <Link to="/newstack" className="link primary"></Link>
+            </article>
+            <article style={{ backgroundImage: `url(${pic03})` }}>
+              <header className="major">
+                <h3>Semana Academica</h3>
+                <p>Eventos para estudiantes</p>
+              </header>
+              <Link to="/semanaacademica" className="link primary"></Link>
+            </article>
+            <article style={{ backgroundImage: `url(${pic04})` }}>
+              <header className="major">
+                <h3>Podcast</h3>
+                <p>Topicos de interes general en formato largo</p>
+              </header>
+              <Link to="/podcast" className="link primary"></Link>
+            </article>
+            <article style={{ backgroundImage: `url(${pic05})` }}>
+              <header className="major">
+                <h3>Socios</h3>
+                <p>Directorio de socios y colaboradores</p>
+              </header>
+              <Link to="/socios" className="link primary"></Link>
+            </article>
+            <article style={{ backgroundImage: `url(${pic06})` }}>
+              <header className="major">
+                <h3>Historia</h3>
+                <p>La historia de Honduras Global</p>
+              </header>
+              <Link to="/historia" className="link primary"></Link>
+            </article>
+          </section>
+          <section id="two">
+            <div className="inner">
+              <header className="major">
+                <h2>La Fundacion</h2>
+              </header>
+              <p>
+                La fundación Honduras Global, fundada en 2011, tiene como
+                objetivo identificar y conectar a hondureños y altamente
+                cualificados en todo el mundo con el fin de promover la
+                transferencia de conocimiento y promover la innovación y el
+                desarrollo científico, tecnológico y empresarial en Honduras.
+              </p>
+              {/* <ul className="actions">
+                <li>
+                  <Link to="/landing" className="button next">
+                    Comenzar
+                  </Link>
+                </li>
+        </ul> */}
+            </div>
+          </section>
+        </div>
+      </Layout>
+    )
+  }
 }
 
 export default HomeIndex

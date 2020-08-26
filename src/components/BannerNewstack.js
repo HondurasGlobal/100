@@ -1,10 +1,10 @@
 import React from 'react'
 
-const BannerLanding = props => (
+const NewstackLanding = props => (
   <section id="banner" className="style2">
     <div className="inner">
       <header className="major">
-        <h1>Esto Es Lo Que Sabemos</h1>
+        <h1>Newstack</h1>
       </header>
       <div className="content">
         <p>
@@ -17,4 +17,4 @@ const BannerLanding = props => (
   </section>
 )
 
-export default BannerLanding
+export default NewstackLanding
