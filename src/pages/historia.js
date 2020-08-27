@@ -113,6 +113,50 @@ const Landing = props => (
             </div>
           </div>
         </section>
+        <section>
+          <Link to="/generic" className="image">
+            <img src={pic10} alt="" />
+          </Link>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Test 1</h3>
+              </header>
+              <p>
+                Prueba Maynor Peña
+              </p>
+              <ul className="actions">
+                <li>
+                  <Link to="/generic" className="button">
+                    Learn more
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <Link to="/generic" className="image">
+            <img src={pic10} alt="" />
+          </Link>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Test 2</h3>
+              </header>
+              <p>
+                Prueba Maynor Peña
+              </p>
+              <ul className="actions">
+                <li>
+                  <Link to="/generic" className="button">
+                    Learn more
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   </Layout>
