@@ -8,7 +8,7 @@ import pic08 from '../assets/images/pic05.jpg'
 import pic09 from '../assets/images/pic05.jpg'
 import pic10 from '../assets/images/pic05.jpg'
 
-const Landing = props => (
+const Landing = (props) => (
   <Layout>
     <Helmet>
       <title>Socios</title>
@@ -81,7 +81,7 @@ const Landing = props => (
                 magna sed nunc rhoncus condimentum sem. In efficitur ligula tate
                 urna. Maecenas massa sed magna lacinia magna pellentesque lorem
                 ipsum dolor. Nullam et orci eu lorem consequat tincidunt.
-                Vivamus et sagittis tempus.
+                Vivamus et sagittis.
               </p>
               <ul className="actions">
                 <li>
