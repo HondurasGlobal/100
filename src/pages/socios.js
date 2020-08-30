@@ -8,6 +8,8 @@ import pic08 from '../assets/images/pic05.jpg'
 import pic09 from '../assets/images/pic05.jpg'
 import pic10 from '../assets/images/pic05.jpg'
 
+$.hi.hdfdfdfljhgdgdf
+
 const Landing = props => (
   <Layout>
     <Helmet>
@@ -19,7 +21,7 @@ const Landing = props => (
 
     <div id="main">
       <section id="one">
-        <div className="inner">
+        <div className="inner" onClick={}>
           <header className="major">
             <h2>Sed amet aliquam</h2>
           </header>
