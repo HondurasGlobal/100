@@ -13,8 +13,10 @@ class Layout extends React.Component {
     this.state = {
       isMenuVisible: false,
       loading: 'is-loading',
+      isLanguageSpanish: true
     }
     this.handleToggleMenu = this.handleToggleMenu.bind(this)
+    this.handleLanguageChange = this.handleLanguageChange.bind(this)
   }
 
   componentDidMount() {
@@ -35,6 +37,12 @@ class Layout extends React.Component {
     })
   }
 
+  handleLanguageChange() {
+    this.setState({
+      isLanguageSpanish: !this.state.isLanguageSpanish
+    })
+  }
+
   render() {
     const { children } = this.props
 
@@ -47,10 +55,10 @@ class Layout extends React.Component {
         <div id="wrapper">
           <Header onToggleMenu={this.handleToggleMenu} />
           {children}
-          {/* <Contact /> */}
-          {/* <Footer /> */}
+          <Contact />
+          <Footer />
         </div>
-        <Menu onToggleMenu={this.handleToggleMenu} />
+        <Menu onToggleMenu={this.handleToggleMenu} onLanguageChange={this.handleLanguageChange} language={this.state.isLanguageSpanish}/>
       </div>
     )
   }

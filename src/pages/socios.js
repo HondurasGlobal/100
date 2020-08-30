@@ -23,7 +23,7 @@ const Landing = props => (
           <header className="major">
             <h2>Sed amet aliquam</h2>
           </header>
-          <p>Juan Carlos</p>
+          <p>Jose</p>
         </div>
       </section>
       <section id="two" className="spotlights">

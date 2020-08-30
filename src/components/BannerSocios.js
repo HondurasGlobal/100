@@ -8,9 +8,9 @@ const SociosLanding = props => (
       </header>
       <div className="content">
         <p>
-          Lorem ipsum dolor sit amet nullam consequat
+          Banner
           <br />
-          sed veroeros. tempus adipiscing nulla.
+          Socios
         </p>
       </div>
     </div>

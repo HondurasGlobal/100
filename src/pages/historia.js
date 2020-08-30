@@ -65,11 +65,8 @@ const Landing = props => (
                 <h3>Rhoncus magna</h3>
               </header>
               <p>
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                magna sed nunc rhoncus condimentum sem. In efficitur ligula tate
-                urna. Maecenas massa sed magna lacinia magna pellentesque lorem
-                ipsum dolor. Nullam et orci eu lorem consequat tincidunt.
-                Vivamus et sagittis tempus.
+                git clone https://github.com/HondurasGlobal/100 cd 100 npm
+                install npm install -g gatsby/cli
               </p>
               <ul className="actions">
                 <li>
@@ -116,9 +113,7 @@ const Landing = props => (
               <header className="major">
                 <h3>Test 1</h3>
               </header>
-              <p>
-                Prueba Maynor Peña
-              </p>
+              <p>Prueba Maynor Peña</p>
               <ul className="actions">
                 <li>
                   <Link to="/generic" className="button">
@@ -138,9 +133,7 @@ const Landing = props => (
               <header className="major">
                 <h3>Test 2</h3>
               </header>
-              <p>
-                Prueba Maynor Peña
-              </p>
+              <p>Prueba Maynor Peña</p>
               <ul className="actions">
                 <li>
                   <Link to="/generic" className="button">
