@@ -8,7 +8,7 @@ const NewstackLanding = props => (
       </header>
       <div className="content">
         <p>
-          Lorem ipsum dolor sit amet nullam consequat
+          This is a banner!
           <br />
           sed veroeros. tempus adipiscing nulla.
         </p>
