@@ -7,18 +7,28 @@ const Contact = (props) => (
                 <form method="post" action="#">
                     <div className="field half first">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="name" id="name" onChange={props.send} value={props.name}/>
                     </div>
                     <div className="field half">
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" id="email" />
+                        <input type="text" name="email" id="email" onChange={props.send} value={props.email}/>
+                    </div>
+                    <div className="field">
+                        <label htmlFor="dropDown">Dirigido a:</label>
+                        <select name="dropDown" required onChange={props.send}>
+                            <option value="maynor">maynorx5000@gmail.com</option>
+                            <option value="chris">fialloschris1@gmail.com</option>
+                            <option value="maynor2">mayky12@yahoo.com</option>
+                            <option value="maynor3">mdpc5000@gmail.com.com</option>
+                            <option value="" disabled defaultValue hidden></option>
+                        </select>
                     </div>
                     <div className="field">
                         <label htmlFor="message">Message</label>
-                        <textarea name="message" id="message" rows="6"></textarea>
+                        <textarea name="message" id="message" rows="6" onChange={props.send} value={props.message}></textarea>
                     </div>
                     <ul className="actions">
-                        <li><input type="submit" value="Send Message" className="special" /></li>
+                        <li><input type="submit" value="Send Message" className="special" onClick={props.send} /></li>
                         <li><input type="reset" value="Clear" /></li>
                     </ul>
                 </form>
