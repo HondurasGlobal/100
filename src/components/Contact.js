@@ -4,28 +4,29 @@ const Contact = (props) => (
     <section id="contact">
         <div className="inner">
             <section>
-                <form method="post" action="#">
+                <form onSubmit={() => props.submit()}>
                     <div className="field half first">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" id="name" />
+                        <input type="text" name="name" id="name" onChange={(event) => props.changed(event)}/>
                     </div>
                     <div className="field half">
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" id="email" />
+                        <input type="text" name="email" id="email" onChange={(event) => props.changed(event)}/>
                     </div>
                     <div className="field">
-                        <label htmlFor="contactEmail">Enviar Correo a:</label>
-                        <select className="field" name="contactEmail">
+                        <label htmlFor="emailTo">Enviar Correo a:</label>
+                        <select className="field" name="emailTo" onChange={(event, inputName) => props.changed(event, 'emailTo')}>
                             <option className="field" value="fialloschris1@gmail.com">Christopher Fiallos</option>
                             <option className="field" value="maynorx5000@gmail.com">Maynor Peña</option>
+                            <option value="" disabled selected hidden/>
                         </select>
                     </div>
                     <div className="field">
                         <label htmlFor="message">Message</label>
-                        <textarea name="message" id="message" rows="6"></textarea>
+                        <textarea name="message" id="message" rows="6" onChange={(event, inputName) => props.changed(event, 'message')}></textarea>
                     </div>
                     <ul className="actions">
-                        <li><input type="submit" value="Send Message" className="special" /></li>
+                        <li><input type="submit" value="Send Message" className="special"/></li>
                         <li><input type="reset" value="Clear" /></li>
                     </ul>
                 </form>

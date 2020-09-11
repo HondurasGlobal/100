@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios'
 
 import '../assets/scss/main.scss'
 import Header from './Header'
@@ -13,7 +14,13 @@ class Layout extends React.Component {
     this.state = {
       isMenuVisible: false,
       loading: 'is-loading',
-      isLanguageSpanish: true
+      isLanguageSpanish: true,
+      contactData: {
+        name: '',
+        email: '',
+        emailTo: '',
+        message: ''
+      }
     }
     this.handleToggleMenu = this.handleToggleMenu.bind(this)
     this.handleLanguageChange = this.handleLanguageChange.bind(this)
@@ -43,6 +50,31 @@ class Layout extends React.Component {
     })
   }
 
+  handleInputChange = event => {
+    this.setState({
+      contactData: {
+        ...this.state.contactData,
+        [event.target.name]: event.target.value
+      }
+    })
+
+    console.log(this.state.contactData);
+  }
+
+  submitData = () => {
+    const data = this.state.contactData
+
+    axios.post(
+      'https://gt90tti0y9.execute-api.us-east-2.amazonaws.com/dev/contact',
+      data,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    )
+  }
+
   render() {
     const { children } = this.props
 
@@ -55,7 +87,7 @@ class Layout extends React.Component {
         <div id="wrapper">
           <Header onToggleMenu={this.handleToggleMenu} />
           {children}
-          <Contact />
+          <Contact changed={this.handleInputChange} submit={this.submitData}/>
           <Footer />
         </div>
         <Menu onToggleMenu={this.handleToggleMenu} onLanguageChange={this.handleLanguageChange} language={this.state.isLanguageSpanish}/>
