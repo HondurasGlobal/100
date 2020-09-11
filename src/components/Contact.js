@@ -16,11 +16,11 @@ const Contact = (props) => (
                     <div className="field">
                         <label htmlFor="dropDown">Dirigido a:</label>
                         <select name="dropDown" required onChange={props.send}>
-                            <option value="maynor">maynorx5000@gmail.com</option>
-                            <option value="chris">fialloschris1@gmail.com</option>
-                            <option value="maynor2">mayky12@yahoo.com</option>
-                            <option value="maynor3">mdpc5000@gmail.com.com</option>
-                            <option value="" disabled defaultValue hidden></option>
+                            <option defaultValue value="maynorx5000@gmail.com">Asociarse</option>
+                            <option value="fialloschris1@gmail.com">Propuestas</option>
+                            <option value="mayky12@yahoo.com">Proyectos</option>
+                            <option value="mdpc5000@gmail.com">Investigacion</option>
+                            
                         </select>
                     </div>
                     <div className="field">
@@ -28,10 +28,12 @@ const Contact = (props) => (
                         <textarea name="message" id="message" rows="6" onChange={props.send} value={props.message}></textarea>
                     </div>
                     <ul className="actions">
-                        <li><input type="submit" value="Send Message" className="special" onClick={props.send} /></li>
+                        <li><input type="submit" onSubmit="return false"   /></li>
                         <li><input type="reset" value="Clear" /></li>
                     </ul>
+                    
                 </form>
+                <button onClick={props.postIt}></button>
             </section>
             <section className="split">
                 <section>
