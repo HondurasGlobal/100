@@ -189,6 +189,10 @@
 		}
 	}
 
+	option {
+		color: #000000
+	}
+
 	input[type="checkbox"] {
 		& + label {
 			&:before {

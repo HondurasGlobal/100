@@ -14,6 +14,13 @@ const Contact = (props) => (
                         <input type="text" name="email" id="email" />
                     </div>
                     <div className="field">
+                        <label htmlFor="contactEmail">Enviar Correo a:</label>
+                        <select className="field" name="contactEmail">
+                            <option className="field" value="fialloschris1@gmail.com">Christopher Fiallos</option>
+                            <option className="field" value="maynorx5000@gmail.com">Maynor Peña</option>
+                        </select>
+                    </div>
+                    <div className="field">
                         <label htmlFor="message">Message</label>
                         <textarea name="message" id="message" rows="6"></textarea>
                     </div>
