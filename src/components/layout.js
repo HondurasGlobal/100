@@ -65,7 +65,7 @@ class Layout extends React.Component {
     const data = this.state.contactData
 
     axios.post(
-      'https://gt90tti0y9.execute-api.us-east-2.amazonaws.com/dev/contact',
+      'https://95893sgii0.execute-api.us-east-2.amazonaws.com/dev/contact',
       data,
       {
         headers: {
