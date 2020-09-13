@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Hunter Chang",
   "dependencies": {
+    "aws-signature-v4": "^1.4.0",
     "axios": "^0.20.0",
     "gatsby": "^2.19.5",
     "gatsby-plugin-manifest": "^2.2.38",
