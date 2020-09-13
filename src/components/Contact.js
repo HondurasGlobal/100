@@ -28,12 +28,12 @@ const Contact = (props) => (
                         <textarea name="message" id="message" rows="6" onChange={props.send} value={props.message}></textarea>
                     </div>
                     <ul className="actions">
-                        <li><input type="submit" onSubmit="return false"   /></li>
+                        <li><input type="submit" onClick={props.postIt}/></li>
                         <li><input type="reset" value="Clear" /></li>
                     </ul>
                     
                 </form>
-                <button onClick={props.postIt}></button>
+                <button onClick={props.postIt}>Test Enviar</button>
             </section>
             <section className="split">
                 <section>

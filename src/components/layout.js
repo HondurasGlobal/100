@@ -57,16 +57,15 @@ class Layout extends React.Component {
 
   sendPostRequest = () => {
 
-
     var config = {
-  method: 'post',
-  url: 'https://dhkqeb8zsi.execute-api.us-east-2.amazonaws.com/Development/contact',
-  headers: {  
-    'X-Amz-Date': '20200911T171447Z', 
-    'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIARBGEDMUEYH3PPEV7/20200911/us-east-2/execute-api/aws4_request, SignedHeaders=dropdown;email;host;message;name;x-amz-content-sha256;x-amz-date, Signature=15173f56ed4389e9da9cecadeb99877fb08021e337aeef5dfa3d6defac768574', 
-    'Content-Type': 'text/plain'
-  },
-  data : this.state.contactInfo
+    method: 'post',
+    url: 'https://dhkqeb8zsi.execute-api.us-east-2.amazonaws.com/Development/contact',
+    headers: {  
+      'X-Amz-Date': '20200911T171447Z', 
+      'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIARBGEDMUEYH3PPEV7/20200911/us-east-2/execute-api/aws4_request, SignedHeaders=dropdown;email;host;message;name;x-amz-content-sha256;x-amz-date, Signature=15173f56ed4389e9da9cecadeb99877fb08021e337aeef5dfa3d6defac768574', 
+      'Content-Type': 'text/plain'
+    },
+    data : this.state.contactInfo
 };
 
 Axios(config)
