@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import aws4 from 'aws-signature-v4';
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 
-class Contact extends Component {
+
+const FormWithToasts = () => {
+  const { addToast } = useToasts()
+
+  const callToast = async value => {
+      addToast('Saved Successfully', { appearance: 'success' })
+  }
+
+  return <button onClick={callToast}>...</button>
+}
+
+class Contact extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -22,86 +33,51 @@ class Contact extends Component {
         [e.target.name]: e.target.value,
       },
     })
-
+    
     console.log(this.state.contactInfo.sendTo)
+    
   }
 
   sendPostRequest = () => {
-
-
-
-    let request = {
-      host: 'dhkqeb8zsi.execute-api.us-east-2.amazonaws.com',
-      method: 'POST',
-      url: 'https://dhkqeb8zsi.execute-api.us-east-2.amazonaws.com/Development/contact',
-      data: this.state.contactInfo, // object describing the foo
-      body: JSON.stringify(this.state.contactInfo), // aws4 looks for body; axios for data  
-      headers: {
-        'content-type': 'application/json'
-      }
-    }
-    
-    let signedRequest = aws4.sign(request,
-      {
-        // assumes user has authenticated and we have called
-        // AWS.config.credentials.get to retrieve keys and
-        // session tokens
-        secretAccessKey: AWS.config.credentials.secretAccessKey,
-        accessKeyId: AWS.config.credentials.accessKeyId,
-        sessionToken: AWS.config.credentials.sessionToken
-      })
-    
-    delete signedRequest.headers['Host']
-    delete signedRequest.headers['Content-Length']
-    
-    let info = Axios(signedRequest)
-    console.log(info);
-
-
-
-
-    /*
-    console.log("Its in");
-    var config = {
+    let config = {
       method: 'post',
       url:
         'https://dhkqeb8zsi.execute-api.us-east-2.amazonaws.com/Development/contact',
       headers: {
-        'X-Amz-Date': '20200911T171447Z',
-        Authorization:
-          'AWS4-HMAC-SHA256 Credential=AKIARBGEDMUEYH3PPEV7/20200911/us-east-2/execute-api/aws4_request, SignedHeaders=dropdown;email;host;message;name;x-amz-content-sha256;x-amz-date, Signature=15173f56ed4389e9da9cecadeb99877fb08021e337aeef5dfa3d6defac768574',
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
+        'x-api-key': 'LZ0lad1IyKQD3MBA5LBHak4Hg8OPmdX3PwQl2JRb',
       },
       data: this.state.contactInfo,
     }
-
+    
     Axios(config)
       .then(function(response) {
-        console.log(JSON.stringify(response.data))
+        console.log(response)
       })
       .catch(function(error) {
         console.log(error)
       })
+  }
 
-      */
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.sendPostRequest()
   }
 
   render() {
     return (
+      <ToastProvider>
       <section id="contact">
         <div className="inner">
           <section>
-            <form
-              method="post"
-              onSubmit={this.sendPostRequest}
-            >
+            <form method="post" action="/" onSubmit={e => this.handleSubmit(e)}>
               <div className="field half first">
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  onChange={this.send}
+                  onChange={this.handleContactChange}
                   value={this.name}
                   required
                 />
@@ -112,15 +88,15 @@ class Contact extends Component {
                   type="email"
                   name="email"
                   id="email"
-                  onChange={this.send}
+                  onChange={this.handleContactChange}
                   value={this.email}
                   required
                 />
               </div>
               <div className="field">
-                <label htmlFor="dropDown">Dirigido a:</label>
-                <select name="dropDown" required onChange={this.send}>
-                  <option style={{ color: 'black' }} selected>
+                <label htmlFor="sendTo">Dirigido a:</label>
+                <select name="sendTo" required onChange={e => this.handleContactChange(e)}>
+                  <option style={{ color: 'black' }} defaultValue>
                     Selecciona una opción
                   </option>
                   <option
@@ -149,20 +125,23 @@ class Contact extends Component {
                   name="message"
                   id="message"
                   rows="6"
-                  onChange={this.send}
+                  onChange={this.handleContactChange}
                   value={this.message}
+                  required
                 ></textarea>
               </div>
               <ul className="actions">
                 <li>
-                  <input type="submit" />
+                  <button type='submit'> Send</button>
                 </li>
                 <li>
                   <input type="reset" value="Clear" />
                 </li>
               </ul>
             </form>
+            <FormWithToasts></FormWithToasts>
           </section>
+
           <section className="split">
             <section>
               <div className="contact-method">
@@ -194,6 +173,7 @@ class Contact extends Component {
           </section>
         </div>
       </section>
+      </ToastProvider>
     )
   }
 }
