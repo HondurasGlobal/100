@@ -82,25 +82,25 @@ class Contact extends React.Component {
 
                                 <Alert variant="filled" severity="success" style={{ marginBottom: 15 }}>
                                     <AlertTitle>Succes!</AlertTitle>
-                        Email sent Successfully — <strong>We'll be in contact soon!</strong>
+                                    Email sent Successfully — <strong>We'll be in contact soon!</strong>
                                 </Alert>
 
-                                :
-                                this.state.formFailed ?
+                            :
+                            this.state.formFailed ?
 
-                                    <Alert variant="filled" severity="error" style={{ marginBottom: 15 }}>
-                                        <AlertTitle>Error!</AlertTitle>
-                        There was an error while sending the Email — <strong>Try again!</strong>
-                                    </Alert>
+                                <Alert variant="filled" severity="error" style={{ marginBottom: 15 }}>
+                                    <AlertTitle>Error!</AlertTitle>
+                                    There was an error while sending the Email — <strong>Try again!</strong>
+                                </Alert>
 
-                                    : this.state.userError ?
+                            : this.state.userError ?
 
-                                        <Alert variant="filled" severity="warning" style={{ marginBottom: 15 }}>
-                                            <AlertTitle>Warning!</AlertTitle>
-                        Make sure you have filled and selected all the fields — <strong>Try again!</strong>
-                                        </Alert>
+                                <Alert variant="filled" severity="warning" style={{ marginBottom: 15 }}>
+                                    <AlertTitle>Warning!</AlertTitle>
+                                    Make sure you have filled and selected all the fields — <strong>Try again!</strong>
+                                </Alert>
 
-                                        : null
+                            : null
                         }
                         <form method="post" action="/" onSubmit={e => { this.handleSubmit(e); this.sendPostRequest(e); }}>
                             <div className="field half first">
